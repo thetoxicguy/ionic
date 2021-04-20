@@ -10,7 +10,10 @@ and open the template in the editor.
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
     
     <!-- defer indicates the script will be executed after the html is parsed -->
-    <script src="app.js" defer></script>
+    <script src='/app.js' defer></script>
+
+    <!-- Make the right reference so it works with external script!!! -->
+
     <head>
         <title>My BMI Calc</title>
         <meta charset="UTF-8">
@@ -29,29 +32,31 @@ and open the template in the editor.
     <ion-content class="ion-padding">
             <ion-item>
                 <ion-label position="floating">Your height here</ion-label>
-                <ion-input id="height-input"> 
+                <ion-input id="height-input" value = 1.7> 
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Your weight here</ion-label>
-                <ion-input id="weight-input">
+                <ion-input id="weight-input" value = 65>
                 </ion-input>
             </ion-item>
             <ion-grid class="ion-text-center ion-margin-top">
                 <ion-row>
                     <ion-col>
-                        <ion-button>
+                        <ion-button fill = "outline" id='calc-btn'>
+                            <ion-icon slot = "start" name = calculator-outline></ion-icon>
                             Calculate
                         </ion-button>
                     </ion-col>
-                    <ion-button>
+                    <ion-button fill = "outline" id='reset-btn'>
+                        <ion-icon slot = "start" name = refresh-outline></ion-icon>
                         Reset
                     </ion-button>
                     <ion-col>
                     </ion-col>
                 </ion-row>
             </ion-grid>
-            <div id="result">Texto a cambiar
+            <div id="result">
             </div>
     </ion-content>
         </ion-app>
